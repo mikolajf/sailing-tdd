@@ -9,7 +9,3 @@ class Sailboat(object):
     def change_course(self, course_diff):
         self._heading = (self._heading + course_diff) % 360.0
         
-    def get_rhumb(self):
-        compass = ['N', 'E', 'S', 'W']
-        index_main = int((self._heading + 45.0) // 90.0)
-        return compass[index_main % 4]
