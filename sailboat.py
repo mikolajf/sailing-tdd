@@ -9,3 +9,8 @@ class Sailboat(object):
     def change_course(self, course_diff):
         self._heading = (self._heading + course_diff) % 360.0
         
+    def set_sail(self, sea):
+        self.sea = sea
+        
+    def get_wind_direction(self):
+        return self.sea.wind_direction

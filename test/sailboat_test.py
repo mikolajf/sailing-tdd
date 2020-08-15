@@ -1,6 +1,7 @@
 import unittest
 from parameterized import parameterized
 from sailboat import Sailboat
+from sea import Sea
 
 class SailboatTest(unittest.TestCase):
     
@@ -27,6 +28,12 @@ class SailboatTest(unittest.TestCase):
         sailboat = Sailboat(initial_heading)
         sailboat.change_course(course_diff)
         self.assertEqual(sailboat.get_heading(), end_heading)
+        
+    def test_get_wind_heading(self):
+        sea = Sea(0.0)
+        sailboat = Sailboat(0.0)
+        sailboat.set_sail(sea)
+        self.assertEqual(sailboat.get_wind_direction(), 0.0)
 
 if __name__ == "__main__":
     unittest.main()
