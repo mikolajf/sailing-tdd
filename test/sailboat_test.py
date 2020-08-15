@@ -29,7 +29,12 @@ class SailboatTest(unittest.TestCase):
         sailboat.change_course(course_diff)
         self.assertEqual(sailboat.get_heading(), end_heading)
         
-    def test_get_wind_heading(self):
+    def test_get_wind_heading_exception(self):
+        sea = Sea(0.0)
+        sailboat = Sailboat(0.0)
+        self.assertRaises(ValueError, sailboat.get_wind_direction)
+        
+    def test_get_wind_heading_after_launch(self):
         sea = Sea(0.0)
         sailboat = Sailboat(0.0)
         sailboat.set_sail(sea)

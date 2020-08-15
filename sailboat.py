@@ -13,4 +13,7 @@ class Sailboat(object):
         self.sea = sea
         
     def get_wind_direction(self):
+        try:
         return self.sea.wind_direction
+        except:
+            raise ValueError("Boat has not been launched.")
