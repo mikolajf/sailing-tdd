@@ -1,3 +1,5 @@
+sides = ['port', 'starboard']
+
 def heading_to_rhumb(heading):
     # TODO think of programmatic way
     # with reference to https://en.wikipedia.org/wiki/File:Brosen_windrose_Full.svg

@@ -1,3 +1,5 @@
+from utils import sides
+
 class Sailboat(object):
     
     def __init__(self, initial_heading):
@@ -14,6 +16,9 @@ class Sailboat(object):
         
     def get_wind_direction(self):
         try:
-        return self.sea.wind_direction
+            return self.sea.wind_direction
         except:
             raise ValueError("Boat has not been launched.")
+    
+    def get_tack(self):
+        return sides[int((self._heading - self.get_wind_direction()) // 180.0)]

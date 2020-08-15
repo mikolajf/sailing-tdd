@@ -39,6 +39,17 @@ class SailboatTest(unittest.TestCase):
         sailboat = Sailboat(0.0)
         sailboat.set_sail(sea)
         self.assertEqual(sailboat.get_wind_direction(), 0.0)
+    
+    @parameterized.expand([
+        (50.0, 'port'),
+        (190.0, 'starboard'),
+        (359.0, 'starboard')
+    ])   
+    def test_get_tack(self, heading, expected_tack):
+        sea = Sea(0.0)
+        sailboat = Sailboat(heading)
+        sailboat.set_sail(sea)
+        self.assertEqual(sailboat.get_tack(), expected_tack)
 
 if __name__ == "__main__":
     unittest.main()
